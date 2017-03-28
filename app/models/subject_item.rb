@@ -1,6 +1,6 @@
 class SubjectItem < ActiveRecord::Base
   has_many :participations, dependent: :destroy
-  has_many :students, through: :participations
+  has_and_belongs_to_many :students, through: :participations
   has_many :subject_item_notes
 
   validates :title, presence: true

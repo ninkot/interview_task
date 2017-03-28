@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 20150719115626) do
     t.integer  "teacher_id"
   end
 
+  create_table "students_subject_items", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "student_id"
+    t.integer  "subject_item_id"
+  end
+
   add_index "subject_items", ["teacher_id"], name: "index_subject_items_on_teacher_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
