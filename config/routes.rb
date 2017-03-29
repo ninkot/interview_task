@@ -3,10 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
-
-  resources :reports do
-    get :subjects, on: :collection
-  end
+  get 'reports/index', to: 'reports#subjects', as: 'report_subjects'
   resources :students, :teachers do
     get :subjects
   end
