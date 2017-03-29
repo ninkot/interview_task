@@ -11,9 +11,9 @@ User.create!(email: 'admin@admin.com',password: 'adminadmin')
 end
 
 teachers = Teacher.all
-5.times do
+['Math', 'Biology', 'Music', 'Science', 'Chemistry'].each do |x|
   SubjectItem.create!(
-    title: Faker::Lorem.sentence,
+    title: x,
     teacher: teachers.sample
   )
 end
