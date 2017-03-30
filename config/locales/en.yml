@@ -23,6 +23,7 @@ en:
     columns:
       first_name: first name
       last_name: last name
+      bday: date of birth
   teacher:
     columns:
       first_name: first name
