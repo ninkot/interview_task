@@ -2,6 +2,7 @@ en:
   navbar:
     students: Students
     teachers: Teachers
+    payments: Payments
     reports: Reports
     reports_subjects: Subjects
     logout: Logout
@@ -19,6 +20,11 @@ en:
     back: Back
     add_new_item: Add new one
     subjects: subjects
+    show_payments: show all payments
+  payment:
+    columns:
+      deadline: deadline
+      paid: paid
   student:
     columns:
       first_name: first name
