@@ -4,7 +4,8 @@ class StudentDecorator < BaseDecorator
   end
 
   def avg_notes(subject_item)
-    '%.2f' % (subject_item.subject_item_notes.present? ? subject_item.subject_item_notes.average(:value) : 0)
+    notes = subject_item.subject_item_notes.for_student(student)
+    '%.2f' % (notes.present? ? notes.average(:value) : 0)
   end
 
   def bday_decorated

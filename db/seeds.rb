@@ -26,10 +26,6 @@ end
   )
 end
 
-# students = Student.all
-# SubjectItem.all.each do |subject_item|
-#   subject_item.students << students.sample(rand(1..4))
-# end
 
 subject_items = SubjectItem.all
 Student.all.each do |student|
