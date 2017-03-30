@@ -1,3 +1,3 @@
 class PaymentsController < ApplicationController
-  expose(:payments)
+  expose(:students, scope: -> { Student.includes(:payments) })
 end

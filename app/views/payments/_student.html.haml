@@ -1,0 +1,9 @@
+%tr
+  %td= student.first_name
+  %td= student.last_name
+  %td= student.payments.last_payment.paid_at
+  %td= yes
+  %td
+    = link_to student_payments_path(student), { title: t('shared.show_payments') } do
+      %button.btn.btn-default
+        = fa_icon "list"

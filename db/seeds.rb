@@ -32,6 +32,18 @@ Student.all.each do |student|
   student.subject_items << subject_items.sample(rand(1..4))
 end
 
+students = Student.all
+5.times do |m|
+  students.each do |student|
+    Payment.create!(
+      student: student,
+      deadline: (Time.now - m.months).end_of_month,
+      paid_at: [nil, (Time.now - m.months - rand(1..10).days)].sample,
+      price: 50
+    )
+  end
+end
+
 SubjectItem.all.each do |subject_item|
   subject_item.students.each do |student|
     rand(1..5).times do

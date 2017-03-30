@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'reports/index', to: 'reports#subjects', as: 'report_subjects'
   resources :payments, only: :index
   resources :students, :teachers do
-    get :payment
+    get :payments
     get :subjects
   end
 end
