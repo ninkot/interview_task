@@ -1,3 +1,4 @@
+require 'faker'
 puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
 User.create!(email: 'admin@admin.com',password: 'adminadmin')
@@ -39,7 +40,7 @@ students = Student.all
       student: student,
       deadline: (Time.now - m.months).end_of_month,
       paid_at: [
-        nil, 
+        nil,
         (Time.now - m.months - rand(1..10).days),
         (Time.now - m.months - rand(1..10).days)
       ].sample,
