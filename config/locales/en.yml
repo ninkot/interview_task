@@ -33,3 +33,4 @@ en:
     columns:
       full_name: Full name
       avg_notes: Notes avarange
+      bday: Date of birth
