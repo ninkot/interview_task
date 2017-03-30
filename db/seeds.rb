@@ -38,7 +38,11 @@ students = Student.all
     Payment.create!(
       student: student,
       deadline: (Time.now - m.months).end_of_month,
-      paid_at: [nil, (Time.now - m.months - rand(1..10).days)].sample,
+      paid_at: [
+        nil, 
+        (Time.now - m.months - rand(1..10).days),
+        (Time.now - m.months - rand(1..10).days)
+      ].sample,
       price: 50
     )
   end
