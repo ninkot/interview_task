@@ -15,3 +15,10 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require_tree .
+
+$(document).on 'ready page:load', ->
+  $('.datatables').dataTable
+    columnDefs: [ {
+      orderable: false
+      targets: [3, 4]
+    } ]
