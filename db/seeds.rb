@@ -21,13 +21,19 @@ end
 25.times do
   Student.create!(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    bday: Faker::Date.birthday(12, 40)
   )
 end
 
-students = Student.all
-SubjectItem.all.each do |subject_item|
-  subject_item.students << students.sample(rand(1..4))
+# students = Student.all
+# SubjectItem.all.each do |subject_item|
+#   subject_item.students << students.sample(rand(1..4))
+# end
+
+subject_items = SubjectItem.all
+Student.all.each do |student|
+  student.subject_items << subject_items.sample(rand(1..4))
 end
 
 SubjectItem.all.each do |subject_item|
