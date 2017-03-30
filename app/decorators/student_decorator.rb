@@ -11,4 +11,13 @@ class StudentDecorator < BaseDecorator
   def bday_decorated
     bday.strftime("%Y-%m_%d") if bday.present?
   end
+
+  def current_payment_paid
+    last_payment = student.payments.last_payment.first
+    if last_payment && last_payment.paid_at > Time.now.beginning_of_month
+      'yes'
+    else
+      'no'
+    end
+  end
 end

@@ -1,0 +1,15 @@
+- breadcrumb :student_payments, student
+= student.decorate.full_name
+%table.table.table-condensed
+  %thead
+    %tr
+      %th= t('payment.deadline')
+      %th= t('payment.paid_at')
+      %th= t('payment.price')
+  %tbody
+    - student_payments.each do |payment|
+      %tr
+        %td= payment.deadline
+        %td= payment.paid_at
+        %td= payment.decorate.price_with_currency
+= link_to t('shared.back'), payments_path, class: 'btn btn-default'

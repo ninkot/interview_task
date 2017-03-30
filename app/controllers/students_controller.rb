@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   expose(:students)
   expose(:student, attributes: :student_params)
   expose(:student_subject_items) { student.subject_items }
+  expose(:student_payments) { student.payments.order(deadline: :desc) }
   def create
     if student.save
       redirect_to student_path(student), notice: I18n.t('shared.created', resource: 'Student')
