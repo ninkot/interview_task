@@ -14,7 +14,7 @@ class StudentDecorator < BaseDecorator
 
   def current_payment_paid
     last_payment = student.payments.last_payment.first
-    if last_payment && last_payment.paid_at > Time.now.beginning_of_month
+    if last_payment && last_payment.paid_at >= Time.now.beginning_of_month
       h.content_tag(:i, nil, class: 'fa fa-check')
     else
       h.content_tag(:i, nil, class: 'fa fa-times')
