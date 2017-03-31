@@ -1,7 +1,7 @@
 require 'faker'
-puts "Seeds: start"
+puts 'Seeds: start'
 TEACHER_TITLES = %w(Dr. Prof. TA).freeze
-User.create!(email: 'admin@admin.com',password: 'adminadmin')
+User.create!(email: 'admin@admin.com', password: 'adminadmin')
 
 3.times do
   Teacher.create!(
@@ -12,7 +12,7 @@ User.create!(email: 'admin@admin.com',password: 'adminadmin')
 end
 
 teachers = Teacher.all
-['Math', 'Biology', 'Music', 'Science', 'Chemistry'].each do |x|
+%w(Math Biology Music Science Chemistry).each do |x|
   SubjectItem.create!(
     title: x,
     teacher: teachers.sample
@@ -26,7 +26,6 @@ end
     bday: Faker::Date.birthday(12, 40)
   )
 end
-
 
 subject_items = SubjectItem.all
 Student.all.each do |student|
@@ -59,4 +58,4 @@ SubjectItem.all.each do |subject_item|
   end
 end
 
-puts "Seeds: done"
+puts 'Seeds: done'

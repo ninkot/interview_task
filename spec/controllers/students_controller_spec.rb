@@ -44,7 +44,7 @@ RSpec.describe StudentsController do
       end
 
       it 'creates student' do
-        expect{ subject }.to change(Student, :count).by(1)
+        expect { subject }.to change(Student, :count).by(1)
       end
     end
 
@@ -75,9 +75,9 @@ RSpec.describe StudentsController do
 
       context 'updates student' do
         subject { -> { put :update, params } }
-        it { is_expected.to change{ student.reload.first_name }.to(first_name) }
-        it { is_expected.to change{ student.reload.last_name }.to(last_name) }
-        it { is_expected.to change{ student.reload.bday.to_s }.to(bday.to_s) }
+        it { is_expected.to change { student.reload.first_name }.to(first_name) }
+        it { is_expected.to change { student.reload.last_name }.to(last_name) }
+        it { is_expected.to change { student.reload.bday.to_s }.to(bday.to_s) }
       end
     end
 
@@ -100,7 +100,7 @@ RSpec.describe StudentsController do
     end
 
     it 'destroys student' do
-      expect{ subject }.to change(Student, :count).by(-1)
+      expect { subject }.to change(Student, :count).by(-1)
     end
   end
 end

@@ -3,5 +3,4 @@ FactoryGirl.define do
     student
     price 50
   end
-
 end

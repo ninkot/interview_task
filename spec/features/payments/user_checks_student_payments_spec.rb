@@ -19,6 +19,6 @@ feature 'User checks student subjects' do
     end
 
     expect(page).to have_content '$50.00'
-    expect(page).to have_content (Time.now.end_of_month - 1.month).strftime("%Y-%m-%d")
+    expect(page).to have_content((Time.now.end_of_month - 1.month).strftime('%Y-%m-%d'))
   end
 end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'User visits teachers page'  do
+feature 'User visits teachers page' do
   let!(:payment_1) { create :payment, deadline: Time.now.end_of_month, paid_at: Time.now.beginning_of_month }
   let!(:payment_2) { create :payment, deadline: Time.now.beginning_of_month, paid_at: Time.now - 1.month }
 
@@ -15,8 +15,8 @@ feature 'User visits teachers page'  do
       expect(page).to have_content 'RoR Workhops » Payments'
     end
 
-    expect(page).to have_content payment_1.paid_at.strftime("%Y-%m-%d")
-    expect(page).to have_content payment_2.paid_at.strftime("%Y-%m-%d")
+    expect(page).to have_content payment_1.paid_at.strftime('%Y-%m-%d')
+    expect(page).to have_content payment_2.paid_at.strftime('%Y-%m-%d')
   end
 
   scenario 'only when sign in' do
