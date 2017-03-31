@@ -1,6 +1,6 @@
 require 'faker'
 puts "Seeds: start"
-TEACHER_TITLES = %w(Dr. Prof. TA)
+TEACHER_TITLES = %w(Dr. Prof. TA).freeze
 User.create!(email: 'admin@admin.com',password: 'adminadmin')
 
 3.times do
